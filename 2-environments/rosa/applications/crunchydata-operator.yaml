@@ -14,7 +14,7 @@ spec:
   source:
     path: 3-operators/crunchydata/overlays/v5
     repoURL: >-
-      git@github.com:ahussey-redhat/silent-auction-demo-infra.git
+      git@github.com:tim-stasse/silent-auction-demo-infra.git
     targetRevision: main
   syncPolicy:
     automated:

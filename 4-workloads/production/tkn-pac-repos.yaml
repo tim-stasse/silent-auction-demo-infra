@@ -2,15 +2,15 @@
 apiVersion: pipelinesascode.tekton.dev/v1alpha1
 kind: Repository
 metadata:
-  name: ahussey-redhat-silent-auction-frontend
+  name: silent-auction-frontend
   namespace: build
 spec:
-  url: 'https://github.com/ahussey-redhat/silent-auction-frontend'
+  url: 'https://github.com/tim-stasse/silent-auction-frontend'
 ---
 apiVersion: pipelinesascode.tekton.dev/v1alpha1
 kind: Repository
 metadata:
-  name: ahussey-redhat-silent-auction-backend
+  name: silent-auction-backend
   namespace: build
 spec:
-  url: 'https://github.com/ahussey-redhat/silent-auction-backend'
+  url: 'https://github.com/tim-stasse/silent-auction-backend'
