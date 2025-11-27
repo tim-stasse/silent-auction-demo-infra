@@ -33,22 +33,22 @@ spec:
   path: /
   port:
     targetPort: pgadmin
-# ---
-# apiVersion: v1
-# kind: Service
-# metadata:
-#   name: silent-auction-frontend-canary
-#   namespace: production
-#   annotations:
-#     argocd.argoproj.io/sync-wave: "2"
-# spec:
-#   selector:
-#     app.kubernetes.io/name: silent-auction-frontend
-#   ports:
-#     - name: http
-#       protocol: TCP
-#       port: 8080
-#       targetPort: 8080
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: silent-auction-frontend-canary
+  namespace: production
+  annotations:
+    argocd.argoproj.io/sync-wave: "2"
+spec:
+  selector:
+    app.kubernetes.io/name: silent-auction-frontend
+  ports:
+    - name: http
+      protocol: TCP
+      port: 8080
+      targetPort: 8080
 ---
 apiVersion: v1
 kind: Service
@@ -65,42 +65,42 @@ spec:
       protocol: TCP
       port: 8080
       targetPort: 8080
-# ---
-# apiVersion: networking.istio.io/v1alpha3
-# kind: VirtualService
-# metadata:
-#   name: silent-auction-frontend
-#   namespace: production
-# spec:
-#   gateways:
-#     - silent-auction-frontend
-#   hosts:
-#     - silent-auction.qa.blueguardian.co
-#   http:
-#     - name: silent-auction-frontend
-#       route:
-#         - destination:
-#             host: silent-auction-frontend-stable
-#           weight: 100
-#         - destination:
-#             host: silent-auction-frontend-canary
-#           weight: 0
-# ---
-# apiVersion: networking.istio.io/v1alpha3
-# kind: Gateway
-# metadata:
-#   name: silent-auction-frontend
-#   namespace: production
-# spec:
-#   selector:
-#     istio: ingressgateway
-#   servers:
-#     - port:
-#         number: 80
-#         name: silent-auction-frontend
-#         protocol: HTTP
-#       hosts:
-#         - silent-auction.qa.blueguardian.co
+---
+apiVersion: networking.istio.io/v1alpha3
+kind: VirtualService
+metadata:
+  name: silent-auction-frontend
+  namespace: production
+spec:
+  gateways:
+    - silent-auction-frontend
+  # hosts:
+  #   - silent-auction.qa.blueguardian.co
+  http:
+    - name: silent-auction-frontend
+      route:
+        - destination:
+            host: silent-auction-frontend-stable
+          weight: 100
+        - destination:
+            host: silent-auction-frontend-canary
+          weight: 0
+---
+apiVersion: networking.istio.io/v1alpha3
+kind: Gateway
+metadata:
+  name: silent-auction-frontend
+  namespace: production
+spec:
+  selector:
+    istio: ingressgateway
+  servers:
+    - port:
+        number: 80
+        name: silent-auction-frontend
+        protocol: HTTP
+      # hosts:
+      #   - silent-auction.qa.blueguardian.co
 ---
 apiVersion: v1
 kind: Service
@@ -133,39 +133,39 @@ spec:
       protocol: TCP
       port: 6443
       targetPort: 6443
-# ---
-# apiVersion: networking.istio.io/v1alpha3
-# kind: VirtualService
-# metadata:
-#   name: silent-auction-backend
-#   namespace: production
-# spec:
-#   gateways:
-#     - silent-auction-backend
-#   hosts:
-#     - silent-auction-backend.qa.blueguardian.co
-#   http:
-#     - name: silent-auction-backend
-#       route:
-#         - destination:
-#             host: silent-auction-backend-stable
-#           weight: 100
-#         - destination:
-#             host: silent-auction-backend-canary
-#           weight: 0
-# ---
-# apiVersion: networking.istio.io/v1alpha3
-# kind: Gateway
-# metadata:
-#   name: silent-auction-backend
-#   namespace: production
-# spec:
-#   selector:
-#     istio: ingressgateway
-#   servers:
-#     - port:
-#         number: 80
-#         name: silent-auction-backend
-#         protocol: HTTP
-#       hosts:
-#         - silent-auction-backend.qa.blueguardian.co
+---
+apiVersion: networking.istio.io/v1alpha3
+kind: VirtualService
+metadata:
+  name: silent-auction-backend
+  namespace: production
+spec:
+  gateways:
+    - silent-auction-backend
+  # hosts:
+  #   - silent-auction-backend.qa.blueguardian.co
+  http:
+    - name: silent-auction-backend
+      route:
+        - destination:
+            host: silent-auction-backend-stable
+          weight: 100
+        - destination:
+            host: silent-auction-backend-canary
+          weight: 0
+---
+apiVersion: networking.istio.io/v1alpha3
+kind: Gateway
+metadata:
+  name: silent-auction-backend
+  namespace: production
+spec:
+  selector:
+    istio: ingressgateway
+  servers:
+    - port:
+        number: 80
+        name: silent-auction-backend
+        protocol: HTTP
+      # hosts:
+      #   - silent-auction-backend.qa.blueguardian.co
