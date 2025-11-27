@@ -10,4 +10,4 @@ patches:
         value: 'stable-v26.4'
     target:
       kind: Subscription
-      name: service-mesh-operator
+      name: rhbk-operator-operator
