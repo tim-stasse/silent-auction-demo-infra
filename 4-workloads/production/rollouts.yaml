@@ -25,7 +25,7 @@ spec:
         app.kubernetes.io/part-of: silent-auction
         app: silent-auction
         version: "20"
-        sidecar.istio.io/inject: "true"
+        sidecar.istio.io/inject: "false"
       annotations:
         app.openshift.io/connects-to: silent-auction-backend
     spec:
@@ -100,7 +100,7 @@ spec:
         app.kubernetes.io/part-of: silent-auction
         app: silent-auction
         version: "21"
-        sidecar.istio.io/inject: "true"
+        sidecar.istio.io/inject: "false"
     spec:
       serviceAccountName: silent-auction
       containers:
