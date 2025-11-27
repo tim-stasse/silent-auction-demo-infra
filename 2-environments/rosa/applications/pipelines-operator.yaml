@@ -9,12 +9,12 @@ metadata:
 spec:
   destination:
     namespace: openshift-pipelines
-    server: 'https://kubernetes.default.svc'
+    server: "https://kubernetes.default.svc"
   project: default
   source:
     path: 3-operators/pipelines/overlays/latest
     repoURL: >-
-      git@github.com:tim-stasse/silent-auction-demo-infra.git
+      https://github.com/tim-stasse/silent-auction-demo-infra.git
     targetRevision: main
   syncPolicy:
     automated:

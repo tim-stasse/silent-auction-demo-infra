@@ -13,7 +13,7 @@ data:
   project: ZGVmYXVsdA==
   sshPrivateKey: "{{ ssh_private_key | b64encode }}"
   type: Z2l0
-  url: Z2l0QGdpdGh1Yi5jb206dGltLXN0YXNzZS9zaWxlbnQtYXVjdGlvbi1kZW1vLWluZnJhLmdpdA==
+  url: aHR0cHM6Ly9naXRodWIuY29tL3RpbS1zdGFzc2Uvc2lsZW50LWF1Y3Rpb24tZGVtby1pbmZyYS5naXQ=
 type: Opaque
 ---
 kind: Secret

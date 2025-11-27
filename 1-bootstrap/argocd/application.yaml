@@ -7,12 +7,12 @@ metadata:
 spec:
   destination:
     namespace: openshift-operators
-    server: 'https://kubernetes.default.svc'
+    server: "https://kubernetes.default.svc"
   project: default
   source:
     path: 2-environments/rosa
     repoURL: >-
-      git@github.com:tim-stasse/silent-auction-demo-infra.git
+      https://github.com/tim-stasse/silent-auction-demo-infra.git
     targetRevision: main
   syncPolicy:
     automated:
