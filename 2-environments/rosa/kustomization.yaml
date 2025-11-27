@@ -9,5 +9,5 @@ resources:
   - applications/misc.yaml
   - applications/pipelines-operator.yaml
   - applications/secrets-management.yaml
-  - applications/rhbk-operator.yaml
+  # - applications/rhbk-operator.yaml
   - applications/service-mesh-operator.yaml
