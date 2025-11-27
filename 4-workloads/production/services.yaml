@@ -74,8 +74,8 @@ metadata:
 spec:
   gateways:
     - silent-auction-frontend
-  # hosts:
-  #   - silent-auction.qa.blueguardian.co
+  hosts:
+    - silent-auction-frontend-production.apps.rosa.grant-pub-prd.0r8r.p3.openshiftapps.com
   http:
     - name: silent-auction-frontend
       route:
@@ -99,8 +99,8 @@ spec:
         number: 80
         name: silent-auction-frontend
         protocol: HTTP
-      # hosts:
-      #   - silent-auction.qa.blueguardian.co
+      hosts:
+        - silent-auction-frontend-production.apps.rosa.grant-pub-prd.0r8r.p3.openshiftapps.com
 ---
 apiVersion: v1
 kind: Service
@@ -142,8 +142,8 @@ metadata:
 spec:
   gateways:
     - silent-auction-backend
-  # hosts:
-  #   - silent-auction-backend.qa.blueguardian.co
+  hosts:
+    - silent-auction-backend-production.apps.rosa.grant-pub-prd.0r8r.p3.openshiftapps.com
   http:
     - name: silent-auction-backend
       route:
@@ -167,5 +167,5 @@ spec:
         number: 80
         name: silent-auction-backend
         protocol: HTTP
-      # hosts:
-      #   - silent-auction-backend.qa.blueguardian.co
+      hosts:
+        - silent-auction-backend-production.apps.rosa.grant-pub-prd.0r8r.p3.openshiftapps.com
