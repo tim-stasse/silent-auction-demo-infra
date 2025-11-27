@@ -1,0 +1,13 @@
+---
+apiVersion: operators.coreos.com/v1alpha1
+kind: Subscription
+metadata:
+  name: service-mesh-operator
+  annotations:
+    argocd.argoproj.io/sync-wave: "0"
+spec:
+  channel: <change-me>
+  installPlanApproval: Automatic
+  name: servicemeshoperator3
+  source: redhat-operators
+  sourceNamespace: openshift-marketplace
