@@ -4,6 +4,7 @@ kind: Kustomization
 metadata:
   name: kustomization-file
 resources:
+  - applications/cert-manager-operator.yaml
   - applications/crunchydata-operator.yaml
   - applications/devspaces-operator.yaml
   - applications/misc.yaml
