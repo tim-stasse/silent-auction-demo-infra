@@ -52,7 +52,6 @@ spec:
               subPath: .env
           ports:
             - containerPort: 3000
-              hostPort: 3000
           imagePullPolicy: Always
       restartPolicy: Always
       terminationGracePeriodSeconds: 30
