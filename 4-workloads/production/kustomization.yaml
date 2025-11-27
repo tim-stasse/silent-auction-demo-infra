@@ -11,7 +11,7 @@ resources:
   - services.yaml
   - secrets.yaml
   - configmaps.yaml
-  # - rollouts.yaml
+  - rollouts.yaml
   - tkn-pac-repos.yaml
 images:
   - name: quay.io/ahussey/silent-auction/frontend
