@@ -25,7 +25,7 @@ spec:
         app.kubernetes.io/part-of: silent-auction
         app: silent-auction
         version: "20"
-        sidecar.istio.io/inject: 'true'
+        sidecar.istio.io/inject: "true"
       annotations:
         app.openshift.io/connects-to: silent-auction-backend
     spec:
@@ -36,15 +36,15 @@ spec:
             name: silent-auction-frontend
       containers:
         - name: silent-auction-frontend
-          image: 'quay.io/ahussey/silent-auction/frontend:latest'
+          image: "quay.io/ahussey/silent-auction/frontend:latest"
           securityContext:
             runAsUser: 10001
           resources:
             limits:
-              cpu: '0.5'
+              cpu: "0.5"
               memory: 4Gi
             requests:
-              cpu: '0.1'
+              cpu: "0.1"
               memory: 256Mi
           volumeMounts:
             - name: modernjs-env
@@ -52,7 +52,7 @@ spec:
               subPath: .env
           ports:
             - name: http
-              containerPort: 8080
+              containerPort: 3000
               protocol: TCP
           imagePullPolicy: Always
       restartPolicy: Always
@@ -100,20 +100,20 @@ spec:
         app.kubernetes.io/part-of: silent-auction
         app: silent-auction
         version: "21"
-        sidecar.istio.io/inject: 'true'
+        sidecar.istio.io/inject: "true"
     spec:
       serviceAccountName: silent-auction
       containers:
         - name: silent-auction-backend
-          image: 'quay.io/ahussey/silent-auction/backend:latest'
+          image: "quay.io/ahussey/silent-auction/backend:latest"
           securityContext:
             runAsUser: 10001
           resources:
             limits:
-              cpu: '0.5'
+              cpu: "0.5"
               memory: 4Gi
             requests:
-              cpu: '0.1'
+              cpu: "0.1"
               memory: 256Mi
           ports:
             - name: http
