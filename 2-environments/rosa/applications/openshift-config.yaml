@@ -1,0 +1,24 @@
+---
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: openshift-config
+  namespace: openshift-gitops
+  annotations:
+    argocd.argoproj.io/sync-wave: "3"
+spec:
+  destination:
+    namespace: openshift-config
+    server: "https://kubernetes.default.svc"
+  project: default
+  source:
+    path: 3-operators/openshift-config/overlays/default
+    repoURL: >-
+      https://github.com/tim-stasse/silent-auction-demo-infra.git
+    targetRevision: main
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - ApplyOutOfSyncOnly=true
