@@ -47,7 +47,11 @@ spec:
   ports:
     - name: http
       protocol: TCP
-      port: 8080
+      port: 80
+      targetPort: 8080
+    - name: https
+      protocol: TCP
+      port: 443
       targetPort: 8080
 ---
 apiVersion: v1
@@ -63,7 +67,11 @@ spec:
   ports:
     - name: http
       protocol: TCP
-      port: 8080
+      port: 80
+      targetPort: 8080
+    - name: https
+      protocol: TCP
+      port: 443
       targetPort: 8080
 ---
 apiVersion: networking.istio.io/v1alpha3
@@ -101,6 +109,42 @@ spec:
         protocol: HTTP
       hosts:
         - silent-auction-frontend-production.apps.rosa.grant-pub-prd.0r8r.p3.openshiftapps.com
+---
+kind: Route
+apiVersion: route.openshift.io/v1
+metadata:
+  name: silent-auction-frontend-canary
+  namespace: production
+spec:
+  host: silent-auction-frontend-canary-production.apps.rosa.grant-pub-prd.0r8r.p3.openshiftapps.com
+  to:
+    kind: Service
+    name: silent-auction-frontend-canary
+    weight: 100
+  port:
+    targetPort: https
+  tls:
+    termination: reencrypt
+    insecureEdgeTerminationPolicy: Redirect
+  wildcardPolicy: None
+---
+kind: Route
+apiVersion: route.openshift.io/v1
+metadata:
+  name: silent-auction-frontend-stable
+  namespace: production
+spec:
+  host: silent-auction-frontend-stable-production.apps.rosa.grant-pub-prd.0r8r.p3.openshiftapps.com
+  to:
+    kind: Service
+    name: silent-auction-frontend-stable
+    weight: 100
+  port:
+    targetPort: https
+  tls:
+    termination: reencrypt
+    insecureEdgeTerminationPolicy: Redirect
+  wildcardPolicy: None
 ---
 apiVersion: v1
 kind: Service
