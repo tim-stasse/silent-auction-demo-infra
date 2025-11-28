@@ -13,7 +13,7 @@ spec:
     passwordSecret:
       name: keycloakdb-pguser-keycloakdb
       key: password
-  hostname:
-    hostname: https://sso.apps.rosa.grant-pub-prd.0r8r.p3.openshiftapps.com
+  http:
+    tlsSecret: tls-certificate
   ingress:
     className: openshift-default
