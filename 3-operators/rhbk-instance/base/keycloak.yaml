@@ -16,6 +16,6 @@ spec:
   http:
     tlsSecret: tls-certs
   hostname:
-    hostname: https://keycloak-keycloak.apps.rosa.grant-pub-prd.0r8r.p3.openshiftapps.com
+    hostname: https://sso.apps.rosa.grant-pub-prd.0r8r.p3.openshiftapps.com
   ingress:
     className: openshift-default
