@@ -6,7 +6,7 @@ spec:
   instances: 1
   db:
     vendor: postgres
-    host: postgres-db
+    host: keycloakdb-primary.keycloak.svc
     usernameSecret:
       name: keycloakdb-pguser-keycloakdb
       key: user
