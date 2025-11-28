@@ -13,7 +13,7 @@ spec:
   source:
     path: 3-operators/service-mesh-instance/overlays/default
     repoURL: >-
-      https://github.com/tim-stasse/silent-auction-demo-infra
+      https://github.com/tim-stasse/silent-auction-demo-infra.git
     targetRevision: main
   syncPolicy:
     automated:
