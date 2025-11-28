@@ -9,7 +9,7 @@ resources:
   - applications/devspaces-operator.yaml
   - applications/misc.yaml
   - applications/openshift-config.yaml
-  - applications/pipelines-operator.yaml
+  # - applications/pipelines-operator.yaml
   - applications/secrets-management.yaml
   - applications/rhbk-operator.yaml
   - applications/rhcl-instance.yaml
