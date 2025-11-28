@@ -11,6 +11,7 @@ resources:
   - applications/openshift-config.yaml
   # - applications/pipelines-operator.yaml
   - applications/secrets-management.yaml
+  - applications/rhbk-instance.yaml
   - applications/rhbk-operator.yaml
   - applications/rhcl-instance.yaml
   - applications/rhcl-operator.yaml
