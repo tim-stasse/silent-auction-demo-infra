@@ -12,9 +12,9 @@ spec:
     server: "https://kubernetes.default.svc"
   project: default
   source:
-    path: 3-operators/service-mesh/overlays/stable
+    path: servicemeshoperator3/operator/overlays/stable
     repoURL: >-
-      https://github.com/tim-stasse/silent-auction-demo-infra.git
+      https://github.com/tim-stasse/gitops-catalog
     targetRevision: main
   syncPolicy:
     automated:
