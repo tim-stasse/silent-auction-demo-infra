@@ -12,7 +12,7 @@ resources:
   - secrets.yaml
   - configmaps.yaml
   - rollouts.yaml
-  - tkn-pac-repos.yaml
+  # - tkn-pac-repos.yaml
 images:
   - name: quay.io/ahussey/silent-auction/frontend
     digest: sha256:0860fbf1b9da7be1a1bce7d972103b14c4d216e8fedcaf20ecbf891e652489b8
