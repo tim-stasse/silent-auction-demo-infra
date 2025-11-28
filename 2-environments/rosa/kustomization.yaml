@@ -14,5 +14,5 @@ resources:
   - applications/rhbk-operator.yaml
   - applications/rhcl-instance.yaml
   - applications/rhcl-operator.yaml
-  # - applications/service-mesh-instance.yaml
-  # - applications/service-mesh-operator.yaml
+  - applications/service-mesh-instance.yaml
+  - applications/service-mesh-operator.yaml
