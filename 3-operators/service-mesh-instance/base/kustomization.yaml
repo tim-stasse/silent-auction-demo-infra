@@ -4,5 +4,6 @@ kind: Kustomization
 
 resources:
   - https://github.com/tim-stasse/gitops-catalog/servicemeshoperator3/instance/overlays/v1.24-latest
-# components:
-#   - https://github.com/tim-stasse/gitops-catalog/servicemeshoperator3/instance/components/ambient-mode
+
+components:
+  - https://github.com/tim-stasse/gitops-catalog/servicemeshoperator3/instance/components/ambient-mode
