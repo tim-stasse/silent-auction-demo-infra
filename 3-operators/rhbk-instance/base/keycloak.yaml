@@ -8,10 +8,10 @@ spec:
     vendor: postgres
     host: postgres-db
     usernameSecret:
-      name: keycloak-db-credentials
-      key: username
+      name: keycloakdb-pguser-keycloakdb
+      key: user
     passwordSecret:
-      name: keycloak-db-credentials
+      name: keycloakdb-pguser-keycloakdb
       key: password
   hostname:
     hostname: https://sso.apps.rosa.grant-pub-prd.0r8r.p3.openshiftapps.com
