@@ -5,7 +5,7 @@ metadata:
   name: rhcl-operator
   namespace: openshift-gitops
   annotations:
-    argocd.argoproj.io/sync-wave: "3"
+    argocd.argoproj.io/sync-wave: "4"
 spec:
   destination:
     namespace: kuadrant-system
