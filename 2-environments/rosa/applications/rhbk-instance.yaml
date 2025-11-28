@@ -12,7 +12,7 @@ spec:
     server: "https://kubernetes.default.svc"
   project: default
   source:
-    path: 3-operators/rhbk-operator/overlays/stable-v26.4
+    path: 3-operators/rhbk-instance/overlays/default
     repoURL: >-
       https://github.com/tim-stasse/silent-auction-demo-infra.git
     targetRevision: main

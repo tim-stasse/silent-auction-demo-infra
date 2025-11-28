@@ -1,0 +1,14 @@
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: keycloak-certs
+spec:
+  secretName: tls-certs
+  isCA: false
+  commonName: https://keycloak-keycloak.apps.rosa.grant-pub-prd.0r8r.p3.openshiftapps.com
+  dnsNames:
+    - https://keycloak-keycloak.apps.rosa.grant-pub-prd.0r8r.p3.openshiftapps.com
+  issuerRef:
+    name: letsencrypt-production
+    kind: ClusterIssuer
+    group: cert-manager.io
