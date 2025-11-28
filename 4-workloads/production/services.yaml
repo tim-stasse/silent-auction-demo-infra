@@ -124,7 +124,7 @@ spec:
   port:
     targetPort: https
   tls:
-    termination: reencrypt
+    termination: edge
     insecureEdgeTerminationPolicy: Redirect
   wildcardPolicy: None
 ---
@@ -142,7 +142,7 @@ spec:
   port:
     targetPort: https
   tls:
-    termination: reencrypt
+    termination: edge
     insecureEdgeTerminationPolicy: Redirect
   wildcardPolicy: None
 ---
